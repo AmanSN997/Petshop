@@ -68,6 +68,10 @@
             margin-bottom: 20px;
         }
 
+        .hero h1 {
+            text-align: center; /* Center the main heading */
+        }
+
         .hero img {
             max-width: 100%;
             height: auto;
@@ -243,12 +247,15 @@
 
         footer {
             text-align: center;
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Reduced vertical padding */
             background-color: #3498db; /* Bluish Footer Color */
             color: white;
             position: fixed;
             bottom: 0;
-            width: 100%;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            width: 100%; /* Reduced width */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
     </style>
 </head>
@@ -272,7 +279,7 @@
     </header>
     <main class="container">
         <section id="home" class="hero">
-            <h1>PawPals: Pampering Your Pets in Okhla, Delhi</h1>
+            <h1 style="text-align: center;">PawPals: Pampering Your Pets in Okhla, Delhi</h1>
             <img src="https://th.bing.com/th/id/OIG4.OOrN8LqqDFoNmzBU186h?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Happy Pets at PawPals">
             <p>Your trusted partner in providing exceptional care for your beloved pets in Okhla, Delhi. We offer a range of services to keep your furry, scaly, and feathered friends happy and healthy.</p>
             <div class="call-to-action">
@@ -309,41 +316,24 @@
             <h2>Our Pet Care Services</h2>
             <div class="service-item">
                 <h3>Pet Grooming</h3>
-                <p>Keep your pets looking and feeling their best with our professional grooming services. We offer bathing, brushing, haircuts, nail trims, and more.</p>
-                <h4>Benefits:</h4>
-                <ul>
-                    <li>Improved hygiene and health</li>
-                    <li>Reduced shedding</li>
-                    <li>Early detection of skin issues</li>
-                    <li>A happy and fresh-smelling pet!</li>
-                </ul>
-                <p><a href="#contact">Book a Grooming Appointment</a></p>
-            </div>
-            <div class="service-item">
-                <h3>Pet Daycare</h3>
-                <p>Provide your pet with a fun and stimulating environment while you're at work or away for the day. Our daycare includes playtime, socialization, and supervision.</p>
-                <h4>Benefits:</h4>
-                <ul>
-                    <li>Reduces boredom and anxiety</li>
-                    <li>Provides exercise and mental stimulation</li>
-                    <li>Improves socialization skills</li>
-                    <li>A tired and content pet to come home to!</li>
-                </ul>
-                <p><a href="#contact">Inquire About Daycare</a></p>
+                <p>Keep your pets looking and feeling their best with our professional grooming services.</p>
+                <p><a href="#contact">Book Grooming</a></p>
             </div>
             <div class="service-item">
                 <h3>Pet Boarding</h3>
-                <p>Our safe and comfortable boarding facilities ensure your pet is well-cared for when you travel. We provide cozy accommodations, regular feeding, exercise, and plenty of attention.</p>
-                <h4>Benefits:</h4>
-                <ul>
-                    <li>Stress-free stay for your pet</li>
-                    <li>Regular feeding and exercise</li>
-                    <li>Supervision by experienced staff</li>
-                    <li>Peace of mind for you while you're away</li>
-                </ul>
-                <p><a href="#contact">Request Boarding Information</a></p>
+                <p>Safe and comfortable boarding facilities for when you're away.</p>
+                <p><a href="#contact">Request Boarding Info</a></p>
             </div>
-            <p>For more information about our services or to book an appointment, please <a href="#contact">contact us</a>.</p>
+            <div class="service-item">
+                <h3>Veterinary Care</h3>
+                <p>Access to quality veterinary services and health check-ups.</p>
+                <p><a href="#contact">Learn More</a></p>
+            </div>
+            <div class="service-item">
+                <h3>Pet Supplies</h3>
+                <p>A wide range of high-quality food, toys, and accessories for your pets.</p>
+                <p><a href="#contact">Shop Supplies</a></p>
+            </div>
         </section>
 
         <section id="gallery" class="gallery-page">
@@ -353,9 +343,6 @@
             </div>
             <div class="gallery-item">
                 <img src="https://th.bing.com/th/id/OIG4.y.6tyrkopOihJbxH_380?pid=ImgGn" alt="Cat Mom">
-            </div>
-            <div class="gallery-item">
-                <img src="https://th.bing.com/th/id/OIG2.ZXbvpC1ue1WO1DFoE5Ei?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Dog Dad">
             </div>
             </section>
 
@@ -368,10 +355,6 @@
             <div class="testimonial">
                 <p>"I recently boarded my two cats, Luna and Shadow, at PawPals while I was on vacation. I was a bit nervous leaving them, but the team at PawPals kept me updated with photos and messages. When I picked them up, they were relaxed and well-cared for. I highly recommend their services!"</p>
                 <cite>- Rohan Verma</cite>
-            </div>
-            <div class="testimonial">
-                <p>"Our Golden Retriever, Buddy, gets very anxious during grooming. However, the groomer at PawPals was so patient and gentle with him. He came back looking fantastic and didn't seem stressed at all. We've finally found a groomer we can trust!"</p>
-                <cite>- Meera Kapoor</cite>
             </div>
             </section>
 
@@ -402,7 +385,7 @@
         <section id="location" class="location-page">
             <h2>Our Location</h2>
             <div class="location-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.879488944388!2d77.10287867505128!3d28.60448888199957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03e6193944ff%3A0x942299dd8109899f!2sWZ%2019-A%2C%20Part-1%2C%20Mukerjee%20Park%2C%20Chaukhandi%2C%20Vishnu%20Garden%2C%20New%20Delhi%2C%20Delhi%20110018!5e0!3m2!1sen!2sin!4v1709918156789!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.879488941416!2d77.11287797508366!3d28.60516108140238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03f1c9999999%3A0xbbbbbbbbbbbbbbbb!2sWz%2019-A%2C%20Part-1%2C%20Mukerjee%20Park%2C%20Chaukhandi%2C%20Vishnu%20Garden%2C%20New%20Delhi%2C%20Delhi%20110018!5e0!3m2!1sen!2sin!4v1711205562844!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="nearby-areas">
                 <h3>We are near</h3>
