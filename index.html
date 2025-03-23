@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPals: Pampering Your Pets in Okhla, Delhi</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3498db; /* Bluish Header Color */
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #2980b9; /* Darker Bluish Hover */
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #e6f7ff; /* Light Blue Background for Hero */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action {
+            margin-top: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3498db; /* Bluish Button Color */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #2980b9; /* Darker Bluish Button Hover */
+        }
+
+        .quick-links {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .quick-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quick-links ul li {
+            margin: 5px 0;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            color: #3498db; /* Bluish Heading Color */
+        }
+
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* About Us Section */
+        .about-us p {
+            margin-bottom: 1rem;
+        }
+        .about-us ul {
+            list-style: disc;
+            margin-left: 2rem;
+        }
+
+        /* Services Section */
+        .services-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .service-item {
+            padding: 15px;
+            border: 1px solid #e0f2f7; /* Light Blue Border for Services */
+            border-radius: 5px;
+            background-color: #f0f8ff; /* Very Light Blue Background for Services */
+        }
+        .service-item h3 {
+            margin-top: 0;
+            color: #3498db; /* Bluish Service Title Color */
+        }
+        .service-item h4 {
+            margin-top: 1rem;
+            color: #3498db; /* Bluish Service Subtitle Color */
+        }
+        .service-item ul {
+            list-style: disc;
+            margin-left: 2rem;
+        }
+
+        /* Gallery Section */
+        .gallery-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .testimonial {
+            padding: 20px;
+            border: 1px solid #e0f2f7; /* Light Blue Border for Testimonials */
+            border-radius: 5px;
+            background-color: #f0f8ff; /* Very Light Blue Background for Testimonials */
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .testimonial cite {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            color: #3498db; /* Bluish Testimonial Author Color */
+        }
+
+        /* Contact Us Section */
+        .contact-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-form iframe {
+            width: 100%;
+            min-height: 480px; /* Adjust as needed */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Location Section */
+        .location-map iframe {
+            width: 100%;
+            height: 450px; /* Adjust as needed */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .nearby-areas {
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+        }
+
+        /* Blog Section */
+        .blog-page .article-preview {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0f2f7; /* Light Blue Border for Blog */
+            border-radius: 5px;
+            background-color: #f0f8ff; /* Very Light Blue Background for Blog */
+        }
+        .blog-page .article-preview h3 a {
+            text-decoration: none;
+            color: #3498db; /* Bluish Blog Title Color */
+        }
+        .blog-page .article-preview p {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #3498db; /* Bluish Footer Color */
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://th.bing.com/th/id/OIG3.Zo.F5kTQWjpRkYuO4c5b?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="PawPals Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>PawPals: Pampering Your Pets in Okhla, Delhi</h1>
+            <img src="https://th.bing.com/th/id/OIG4.OOrN8LqqDFoNmzBU186h?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Happy Pets at PawPals">
+            <p>Your trusted partner in providing exceptional care for your beloved pets in Okhla, Delhi. We offer a range of services to keep your furry, scaly, and feathered friends happy and healthy.</p>
+            <div class="call-to-action">
+                <a href="#services" class="button">View Our Services</a>
+                <a href="#contact" class="button">Book an Appointment</a>
+            </div>
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#gallery">Visit Our Gallery</a></li>
+                    <li><a href="#contact">Get in Touch</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about" class="about-us">
+            <h2>About Us</h2>
+            <p>Welcome to PawPals! Our journey began with a simple love for animals and a desire to provide them with the highest quality care in the Okhla area of Delhi. Founded by [Your Name/Team Name], we recognized the need for a pet care shop that not only offers essential services but also creates a warm, safe, and fun environment for pets.</p>
+            <p>With years of experience in animal handling and a deep understanding of their needs, our team is dedicated to ensuring every pet that comes through our doors feels like they're at their second home. We believe in treating each animal with the same love and attention we give our own.</p>
+
+            <h3>Our Mission & Values</h3>
+            <p><strong>Mission:</strong> To provide exceptional and compassionate pet care services that enhance the well-being of pets and offer peace of mind to their owners.</p>
+            <p><strong>Values:</strong></p>
+            <ul>
+                <li><strong>Compassion:</strong> We treat every pet with kindness and understanding.</li>
+                <li><strong>Quality:</strong> We are committed to providing the highest standards of care and service.</li>
+                <li><strong>Trust:</strong> We strive to build lasting relationships with our clients and their pets through honesty and reliability.</li>
+                <li><strong>Safety:</strong> The safety and well-being of every animal is our top priority.</li>
+            </ul>
+        </section>
+
+        <section id="services" class="services-page">
+            <h2>Our Pet Care Services</h2>
+            <div class="service-item">
+                <h3>Pet Grooming</h3>
+                <p>Keep your pets looking and feeling their best with our professional grooming services. We offer bathing, brushing, haircuts, nail trims, and more.</p>
+                <h4>Benefits:</h4>
+                <ul>
+                    <li>Improved hygiene and health</li>
+                    <li>Reduced shedding</li>
+                    <li>Early detection of skin issues</li>
+                    <li>A happy and fresh-smelling pet!</li>
+                </ul>
+                <p><a href="#contact">Book a Grooming Appointment</a></p>
+            </div>
+            <div class="service-item">
+                <h3>Pet Daycare</h3>
+                <p>Provide your pet with a fun and stimulating environment while you're at work or away for the day. Our daycare includes playtime, socialization, and supervision.</p>
+                <h4>Benefits:</h4>
+                <ul>
+                    <li>Reduces boredom and anxiety</li>
+                    <li>Provides exercise and mental stimulation</li>
+                    <li>Improves socialization skills</li>
+                    <li>A tired and content pet to come home to!</li>
+                </ul>
+                <p><a href="#contact">Inquire About Daycare</a></p>
+            </div>
+            <div class="service-item">
+                <h3>Pet Boarding</h3>
+                <p>Our safe and comfortable boarding facilities ensure your pet is well-cared for when you travel. We provide cozy accommodations, regular feeding, exercise, and plenty of attention.</p>
+                <h4>Benefits:</h4>
+                <ul>
+                    <li>Stress-free stay for your pet</li>
+                    <li>Regular feeding and exercise</li>
+                    <li>Supervision by experienced staff</li>
+                    <li>Peace of mind for you while you're away</li>
+                </ul>
+                <p><a href="#contact">Request Boarding Information</a></p>
+            </div>
+            <p>For more information about our services or to book an appointment, please <a href="#contact">contact us</a>.</p>
+        </section>
+
+        <section id="gallery" class="gallery-page">
+            <h2>Our Happy Clients</h2>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIG4.orm3aMpFZH9BTwwB9Mwt?pid=ImgGn" alt="Dog Mom">
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIG4.y.6tyrkopOihJbxH_380?pid=ImgGn" alt="Cat Mom">
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIG2.ZXbvpC1ue1WO1DFoE5Ei?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Dog Dad">
+            </div>
+            </section>
+
+        <section id="testimonials" class="testimonials-page">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial">
+                <p>"PawPals has been a lifesaver for my busy schedule! My energetic Labrador, Max, loves going to daycare there. He always comes home happy and worn out. The staff are incredibly friendly and I can tell they genuinely care about the animals."</p>
+                <cite>- Priya Sharma</cite>
+            </div>
+            <div class="testimonial">
+                <p>"I recently boarded my two cats, Luna and Shadow, at PawPals while I was on vacation. I was a bit nervous leaving them, but the team at PawPals kept me updated with photos and messages. When I picked them up, they were relaxed and well-cared for. I highly recommend their services!"</p>
+                <cite>- Rohan Verma</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Our Golden Retriever, Buddy, gets very anxious during grooming. However, the groomer at PawPals was so patient and gentle with him. He came back looking fantastic and didn't seem stressed at all. We've finally found a groomer we can trust!"</p>
+                <cite>- Meera Kapoor</cite>
+            </div>
+            </section>
+
+        <section id="contact" class="contact-us">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>Our Address</h3>
+                <p>Wz 19-A, Part-1, Mukerjee Park, Chaukhandi, Vishnu Garden, New Delhi, Delhi, 110018</p>
+            </div>
+            <div class="contact-info">
+                <h3>Phone Number</h3>
+                <p>+91-7654890003</p>
+            </div>
+            <div class="contact-info">
+                <h3>Email Address</h3>
+                <p><a href="mailto:contact.care@pawpals.com">contact.care@pawpals.com</a></p>
+            </div>
+            <div class="contact-info">
+                <h3>Operating Hours</h3>
+                <p>Monday - Saturday: 9 AM to 7 PM, Sunday: Closed</p>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJQB2wbw3XWVGJV633UZSCfxYxuGfOifIPSSQpLAqdB8DGWQ/viewform?embedded=true" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </section>
+
+        <section id="location" class="location-page">
+            <h2>Our Location</h2>
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.879488944388!2d77.10287867505128!3d28.60448888199957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03e6193944ff%3A0x942299dd8109899f!2sWZ%2019-A%2C%20Part-1%2C%20Mukerjee%20Park%2C%20Chaukhandi%2C%20Vishnu%20Garden%2C%20New%20Delhi%2C%20Delhi%20110018!5e0!3m2!1sen!2sin!4v1709918156789!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="nearby-areas">
+                <h3>We are near</h3>
+                <p>Mukerjee Park, Chaukhandi, and Vishnu Garden.</p>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-page">
+            <h2>Pet Care Blog & Resources</h2>
+            <div class="article-preview">
+                <h3><a href="#">Top 5 Tips for Grooming Your Dog at Home</a></h3>
+                <p>Learn essential tips and tricks to keep your canine companion looking their best between professional grooming sessions.</p>
+                <p>Posted on: March 23, 2025</p>
+            </div>
+            <div class="article-preview">
+                <h3><a href="#">Choosing the Right Food for Your Kitten</a></h3>
+                <p>A guide to selecting nutritious and appropriate food for your growing kitten's needs.</p>
+                <p>Posted on: March 15, 2025</p>
+            </div>
+            </section>
+    </main>
+    <footer>
+        <p>© 2025 PawPals. All rights reserved.</p>
+    </footer>
+</body>
+</html>
